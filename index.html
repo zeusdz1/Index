@@ -3,29 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <link rel="stylesheet" href="styles.css">
-    <title>Contact Us</title>
+    <title>Embedded Content</title>
+	<header>
+      Box
+	</header>
 </head>
 <body>
-    <header>
-<h1>Contact Us</h1>
-    <p>Get in touch with our team</p>
-	</header>
-	
-	 <main class="contact-container">
-	 <section class="contact-info">
-	 <h2>Our Contact Information</h2>
-	  <address>
-	     <p>Email: info@example.com</p>
-         <p>Phone: (555) 123-4567</p>
-         <p>Address: 123 Business Street, City, Country</>
-		  </address>
-        </section>
-            <!-- Form code from Step 2 goes here -->
-    </main>
+   <iframe     src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_CODE"
+    title="Google Maps Location"
+    width="600"
+    height="450"
+    loading="lazy"
+    allowfullscreen=""
+    referrerpolicy="no-referrer-when-downgrade"
+    sandbox="allow-scripts allow-same-origin allow-popups">
+    <p>Your browser does not support iframes. Please visit our <a href="location-link">location page</a>.</p>
+</iframe>
+   <main>
+    <div class="iframe-controls">
+    <button onclick="reloadFrame()">Reload Content</button>
+    <button onclick="toggleFullscreen()">Fullscreen</button>
+</div>
 
-    <footer>
-        <p>&copy; 2025 Your Company. All rights reserved.</p>
-    </footer>
+<script>
+function reloadFrame() {
+    const frame = document.querySelector('iframe');
+    frame.src = frame.src;
+}
+
+function toggleFullscreen() {
+    const frame = document.querySelector('iframe');
+    if (frame.requestFullscreen) {
+        frame.requestFullscreen();
+    }
+}
+</script>
+	<div>
+        Our Location
+    </div>
+	 <p>This is a box containing a specific location</p>
+    <div>
+        <iframe src="about:blank"></iframe>
+    </div>
+	<aside>
+	<b>This is where you will find the location of the specific location</b>
+	</aside>
+	<footer>
+	Embedded Content 2025.
+	</footer>
+	</main>
+	
+	
 </body>
 </html>
